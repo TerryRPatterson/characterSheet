@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "moduleResolution": "node",
+        "paths": {
+            "@/": ["./renderer", "./main"],
+            "common/": ["./common/"]
+
+        }
+    },
+    "include": [
+        "./src/"
+    ]
+}

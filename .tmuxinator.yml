@@ -1,0 +1,8 @@
+name: CharacterSheet
+root: ~/programming_projects/characterSheet/
+
+windows:
+    - CharacterSheet Dev:
+        panes:
+            - pnpm run main_dev
+            - pnpm run renderer_dev

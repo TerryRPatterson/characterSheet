@@ -1,0 +1,23 @@
+function npm() {
+    if type pnpm >/dev/null 2>&1; then
+        pnpm "$@"
+    else
+        # Note: "command" bypasses functions, aliases, ...
+        command npm "$@"
+    fi
+}
+
+export -f npm;
+
+
+
+function npx() {
+    if type pnpx >/dev/null 2>&1; then
+        pnpx "$@"
+    else
+        # Note: "command" bypasses functions, aliases, ...
+        command npx "$@"
+    fi
+}
+
+export -f npm;

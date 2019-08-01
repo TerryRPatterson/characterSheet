@@ -1,0 +1,52 @@
+{
+  "name": "charactersheet",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "renderer_dev": "webpack-dev-server --config \"${WRK_DIR}/renderer.webpack.config.babel.js\"",
+    "main_dev": "webpack --watch --config \"${WRK_DIR}/main.webpack.config.babel.js\" --info-verbosity none",
+    "dev": "nodemon --watch webpack.config.babel.js --exec 'pnpx webpack-dev-server'",
+    "lint": "nodemon -i node_modules -i dist --exec 'pnpx eslint_d .'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "babel-eslint": "10.0.2",
+    "babel-loader": "^8.0.6",
+    "bulma": "^0.7.5",
+    "css-loader": "^3.0.0",
+    "dotenv-webpack": "^1.7.0",
+    "electron": "^5.0.6",
+    "electron-is-dev": "^1.1.0",
+    "electron-settings": "3.2.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "js-yaml-loader": "^1.2.2",
+    "mini-css-extract-plugin": "^0.7.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "7.1.0",
+    "serialize-error": "4.1.0",
+    "svelte": "^3.6.2",
+    "svelte-loader": "^2.13.4",
+    "svelte-preprocess-sass": "0.2.0",
+    "webpack": "^4.35.0",
+    "webpack-build-notifier": "^1.0.3",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "devDependencies": {
+    "eslint-friendly-formatter": "4.0.1",
+    "source-map-loader": "0.2.4",
+    "eslint": "6.0.1",
+    "eslint-loader": "2.2.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-svelte3": "2.3.0",
+    "nodemon": "^1.19.1",
+    "nodemon-webpack-plugin": "^4.0.8"
+  }
+}

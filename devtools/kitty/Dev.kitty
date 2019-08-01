@@ -1,0 +1,5 @@
+title Main Process
+launch pnpm run main_dev
+
+title Renderer Process
+launch pnpm run renderer_dev
