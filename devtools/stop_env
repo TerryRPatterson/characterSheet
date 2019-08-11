@@ -1,0 +1,5 @@
+#! /bin/bash
+
+unset -f npm npx
+path_del "$WRK_DIR/node_modules/.bin"
+nvs use default 

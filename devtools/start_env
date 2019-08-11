@@ -1,3 +1,5 @@
+#! /bin/bash
+
 function npm() {
     if type pnpm >/dev/null 2>&1; then
         pnpm "$@"
@@ -8,6 +10,9 @@ function npm() {
 }
 
 export -f npm;
+
+nvs use
+path_append "$WRK_DIR/node_modules/.bin"
 
 
 
@@ -21,3 +26,4 @@ function npx() {
 }
 
 export -f npm;
+

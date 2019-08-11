@@ -1,4 +1,3 @@
-
 export default async function context(context, func) {
     const value = context.__enter__();
     try {
@@ -8,6 +7,8 @@ export default async function context(context, func) {
         context.__exit__(error);
     }
 }
+
+
 
 export class contextManager {
     constructor(func) {

@@ -6,6 +6,7 @@ import isDev from 'electron-is-dev';
 import settings from 'electron-settings';
 
 import createIPCEndpoint from '@/remote-main';
+import {error} from 'common/error';
 
 app.on('ready', () => startApp(app));
 
@@ -70,12 +71,19 @@ function setupListenters(app) {
     });
 }
 
-process.on('unhandledRejection', (reason) => {
-    // eslint-disable-next-line no-debugger
-    debugger;
-    // eslint-disable-next-line no-console
-    console.error(reason);
-});
+async function fatalError(err) {
+    try {
+        await error(err);
+    } catch {
+        const errorInErrorHandler = 7;
+        app.exit(errorInErrorHandler);
+    } finally {
+        app.exit(1);
+    }
+}
+
+process.on('unhandledRejection', fatalError);
+process.on('uncaughtException', fatalError);
 
 
 process.on('SIGUSR2', () => app.quit());

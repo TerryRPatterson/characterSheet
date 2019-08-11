@@ -1,5 +1,4 @@
 #! /usr/bin/env bash
-set -o nounset
 
 
 cd $WRK_DIR
@@ -8,7 +7,7 @@ echo 'Refreshing dependcies'
 pnpm install
 echo 'Starting program'
 
-if [[ -x $(which kitty) ]]
+if [[ -x $(which kitty) && $1 != '--no-kitty' ]]
 then
     kitty --config ./devtools/kitty/kitty.conf
 else

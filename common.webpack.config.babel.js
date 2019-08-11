@@ -6,6 +6,11 @@ import {resolve} from 'path';
 import formatter from 'eslint-friendly-formatter';
 
 
+export const crossAlias = {
+    'common': resolve(__dirname, 'src/common'),
+};
+
+
 export const crossPlugins = [
     new HotModuleReplacementPlugin(),
     new WebpackBuildNotifierPlugin({
@@ -44,7 +49,7 @@ export const crossLoaders = [
     },
     {
         test: /\.yaml/,
-        use: ['json-loader', 'js-yaml-loader'],
+        use: ['yaml-loader'],
     },
 ];
 
