@@ -1,4 +1,6 @@
+#! /usr/bin/bash
 
-if [ ! command -v pnpm ]
-    npx i
+if ! type -P pnpm
+then
+    npx pnpm install
 fi
